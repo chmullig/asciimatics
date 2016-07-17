@@ -1524,7 +1524,11 @@ else:
             self.colours = curses.COLORS
 
             # Disable the cursor.
-            curses.curs_set(0)
+            if hasattr(curses, 'curs_set'):
+                try:
+                    curses.curs_set(0)  # make the cursor invisible
+                except:
+                    pass
 
             # Non-blocking key checks.
             self._screen.nodelay(1)
