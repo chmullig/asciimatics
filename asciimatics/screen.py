@@ -1691,8 +1691,8 @@ else:
                 try:
                     curses.curs_set(0)  # make the cursor invisible
                 except:
-            pass
-
+                    pass
+            
             # Non-blocking key checks.
             self._screen.nodelay(1)
 
